@@ -1,0 +1,17 @@
+{
+  "name": "libwecan-wasm",
+  "author": "anlijiu",
+  "version": "1.0.0",
+  "description": "libwecan-wasm",
+  "dependencies": {},
+  "main": "dist/index.js",
+  "scripts": {
+    "build:wasm": "mkdir -p build && cd build && emcmake cmake .. && cmake --build . && cp libwecan.js ../lib/",
+    "build:ts": "tsc",
+    "build": "yarn build:wasm && yarn build:ts",
+    "start": ""
+  },
+  "devDependencies": {
+    "@types/emscripten": "^1.39.7"
+  }
+}

@@ -18,7 +18,7 @@ export class WeCan {
     this.#frameBuffer = getModule().ccall("get_frame", "number", [], []);
   }
 
-  puzzle(pieces: Piece[], frameLength: number) {
+  puzzle(pieces: Piece[], frameLength: number = 64) {
     getModule().ccall("reset_frame", null, [], []);
     for (let piece of pieces) {
       this.#insertStatic(piece.startBit, piece.signalLength, piece.signalValue);
